@@ -1,0 +1,60 @@
+chapter 11
+
+Inheritance
+- useful for reusing classes that associate with a super class (shape <-- circle, triangle, etc
+- "is a" relationship; subclass "is a" superclass
+
+extends keyword
+- extends keyword allows subclass to access superclass
+
+Superclass
+- superclass, parent class, base class, supertype (same thing, diff names)
+- **Can** be inherited by multiple classes
+
+Subclass
+- subclass, child(ren) class(es), extended class, derived class, subtype (same thing diff names)
+- A subclass inherits all data members, methods (*excluding constructors*) and any changes from a superclass
+- The subclass must implement their own constructors, and to access data members from superclass, they must use get/set methods
+- A subclass add data and methods and they can override methods
+- A subclass **cannot** inherit multiple classes
+
+super keyword
+- super. --> superclass
+	- method must exist in superclass to use
+- super() --> superclass constructor
+	- checks signature and matches appropriate method in superclass
+- java automatically calls super in child class constructors; given for free
+
+
+Constructor chaining
+- Java executes **all** default superclass constructors up the "extends" chain 
+	- Dog() --> Animal() --> Object()
+
+Overriding methods
+- Subclasses can override methods from a superclass to uniquely modify a method more suited for the subclass
+- an overrided method **must** match the superclass method signature
+- private and static methods are not applicable here as they are not modifiable or private
+	- **a subclass can still inherit and access a static method using SuperClass.staticMethod()
+- Animal toString() can override Object toString to avoid getting the random line in a test class
+
+Overriding vs Overloading
+- Overriding: method signature must match
+- Overloading: different parameters are allowed, but not different return types
+
+Polymorphism
+- **supertype** references can always refer to a **subtype**
+- does not work the other way around (all animals are not dogs, all persons are not students, etc)
+- Usefuleness:
+	1. Flexibility: can collect subclass instances into a single collection
+	2. Consistency: able to call a superclass method on all subclasses
+- Allows methods to be used generically for a wide range of object arguments
+	- this is called generic programming
+	
+Dynamic Binding
+- Subclasses can override superclass methods, so how can we know whch version is invoked
+- Declared type: **variable** type of reference when declared, matched at **compile time** EX. **Animal** animal = new Dog();
+- Actual type: actual type of variable reference, matched at **runtime** EX. Animal animal = new **Dog**();
+
+Method Matching vs Binding 
+- **Compiler** finds a **matching method** according to parameter type, number of parameters and order of the parameters
+- A method may be implemented in several subclasses; JVM dynamically binds the implementation of the method at **runtime**

@@ -1,0 +1,45 @@
+Chapter 10 - Object oriented thinking
+
+Class Abstraction and Encapsulation
+- When details of implementation are encapsulated and hidden from the user
+
+
+Classes and relationships
+- Relationships are defined via UML
+- Common relationships: association, composition, aggregation, inheritance(chap11)
+
+Association
+- Association - general, binary relationships between **two** classes
+	- Adds lables, directions, roles
+	- Adds multiplicity - number or interval that specifies number of objects 
+
+	EX. Student.java(5...60) --- TAKE ---> Course.java(0...4) <--- TEACH --- Faculty.java
+	
+Aggregation and Composition
+- Aggregation - "has a" relationship, represented with a hollow diamond, it can exist between same class: 1 to 1, or 1 to many
+- Composition - depends on aggregating class, represented with a filled diamond
+	- Student has a Name(composition) vs Student has an Address(aggregation)
+	
+Processing Primitive Data Type Values as Objects
+- Primitive data types are not objects, however many java methods uses objects as arguments
+- Java offers a way to incorporate a primitive data type value into an object
+- Using the wrapper class , you can process primitive data type values as objects
+- ex. doubleValue(), intValue(), Integer x1 = new Integer("32")
+
+Stack
+- data structure
+- LIFO = last in first out, push, pop, and seek
+- refer to StackOfIntegers.java
+
+Splitting strings
+
+Regular expressions(regex)
+- match, replace, or split a string by specifying a pattern
+-
+
+StringBuilder and StringBuffer
+- classes alternative to the string class
+- String - *immutable* strings
+- StringBuilder - *mutable* strings
+- StringBuffer - contains synchronized methods for updating strings
+

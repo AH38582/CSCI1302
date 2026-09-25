@@ -1,0 +1,119 @@
+package chap9;
+Chapter 9 Notes
+
+OOP = Object Oriented Programming
+UML = Unified Modeling Language
+
+Objects
+- An object represents a real world entity
+- An object is an instance of a class. Objects created in main method are instances of their class
+- (the word instance emphasizes the relationship between an object and its class, i.e. house blueprint and the house created from blueprint)
+- An object has a unique state(date fields) and behavior(methods)
+
+UML
+- A UML is a class diagram
+- Class name is at the top and centered
+- Data fields are written first and then constructors and additional methods are last, these two are separated with a line
+- Visibility modifiers are identified with "+" "-", and i'll find the other ones later
+- A data member is denoted as dataMember: dataMemberType
+- A constructor is denoted as ClassName(parameterName: paramaterType)
+- A method is denoted as methodName(parameterName: paramaterType): returnType
+- Static members are UNDERLINED*
+____________________________________
+|              Circle               |          
+|___________________________________|
+|-radius: double                    |
+|-numberOfCircles: int*             |
+|___________________________________|
+|+Circle()                          |
+|+Circle(radius: double)            |
+|+getRadius(): double               | 
+|+setRadius(radius: double): void   |
+|+getNumberOfCircles(): int         |
+|+getArea(): double                 |
+|___________________________________|
+
+
+Constructors
+- Constructors are a special method that are invoked in the main method to create an object (Circle circ = **new Circle()**)
+- Mainly designed to initialize data members
+- No-argument constructors set default values for data members
+- ^^(A class has a default constructor only if the class does not define any constructor)
+- Convenience constructors set specified values that is called from *this* keyword
+- A constructor must have the same name as the class itself
+- Constructors do not have a return type or a void keyword(otherwise, it would be a method)
+- Convenience constructors can be overloaded(multiple constructors with the same name, diff signature)
+- you can add print statements inside constructors and it will print when you create a new object
+- you can copy an array in a constructor or use "copy constructor" to copy objects 
+- String object types and static member initialization recommended not in constructor
+
+
+Reference variables
+- Objects are accessed with reference variables (Circle **circ** = new blah blah)
+- Declaring a reference variable to Circle object:
+	Circle circ;
+- Creates Circle object and assigning a reference variable to it:
+	circ = new Circle();
+- A data field in a class can be of an object type
+
+Accessing object data and methods
+- Is accessed using the dot operator
+- 
+
+Static variables
+- class variables; shared among all classes
+- constants(final keyword) and static members are different(?)
+- any changes made in value is updated across all instances automatically
+
+Variables of primitive types vs reference types
+- A variable of a primitive type holds a value of the primitive type
+- A variable of a reference type holds a reference to where an object is stored in memory
+
+int i = 1; // Primitive type
+Circle c; //Reference type
+
+- When an object is no longer referenced, it is considered "garbage collection", which removes objects in memory that are no longer able to be accessed
+
+Classes from Java library examples
+- java.util.Date
+- java.util.Random
+- javafx.geometry.Point2D
+
+***Visibility modifiers***
+- Public: classes methods and data fields are denoted to be accessed by any class
+- Private: opposite of public; only keeps to its class
+- Default: same as public but package secure 
+- Protected
+
+Data field encapsulation(getters and setters)
+- Modifying data fields directly is not good practice for two reasons:
+	1. Data could be tampered
+	2. Class becomes difficult to maintain and vulnerable to bugs
+	
+- To fix those reasons, data fields can be declared private(data field encapsulation)
+- now that data fields are private, they cannot be accessed outside the class and must be invoked some other way hmm i wonder
+- getter method(accessor): returns a value
+- setter method(mutator): sets a new value
+
+Signature cheat sheet(or use the source button wisely)
+	1. Getter:
+		public returnType gePropertyName() { // boolean uses isPropertyName
+		
+		}
+		
+	2. Setter:
+		public void setPropertyName(dataType propertValue) {
+		
+		}
+
+Passing objects to methods
+- passing an object is passing the reference of the object
+
+
+Immutable objects and classes
+- if contents of an object/class cannot be changed  are called immutable objects/classes
+- Requirements for an immutable class:
+	1. all data feilds are private
+	2. no mutator methods
+	3. no accessor methods that returns a reference to a mutable data field object
+	
