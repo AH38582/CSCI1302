@@ -21,10 +21,14 @@ public class AnimalTest {
 		animals.add(e1);
 
 		for (int i = 0; i < animals.size(); i++) {
-			System.out.println(animals.get(i).toString());
+			printObject(animals.get(i));
 			System.out.println(animals.get(i).makeNoise());
 			System.out.println();
 		}
+	}
+	
+	public static void printObject(Object x) {
+		System.out.println(x);
 	}
 
 }

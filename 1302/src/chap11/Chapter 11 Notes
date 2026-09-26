@@ -50,11 +50,26 @@ Polymorphism
 - Allows methods to be used generically for a wide range of object arguments
 	- this is called generic programming
 	
+	
 Dynamic Binding
-- Subclasses can override superclass methods, so how can we know whch version is invoked
+- Subclasses can override superclass methods, so how can we know which version is invoked
 - Declared type: **variable** type of reference when declared, matched at **compile time** EX. **Animal** animal = new Dog();
 - Actual type: actual type of variable reference, matched at **runtime** EX. Animal animal = new **Dog**();
 
 Method Matching vs Binding 
 - **Compiler** finds a **matching method** according to parameter type, number of parameters and order of the parameters
 - A method may be implemented in several subclasses; JVM dynamically binds the implementation of the method at **runtime**
+
+Generic programming
+- if a methods parameter type is a superclass, you can pass any of the parameter's subclasses
+- when an object is used in the method, the implementation of the method of the object is determined dynamically
+
+Casting objects
+- Implicit casting - using a supertype to create objects of subtype; super --> sub
+- Explicit casting - enforce casting with (Type) refvar;
+- **Upcasting** - sub --> super
+- **Downcasting** - super --> sub
+
+
+instanceof operator
+- tests whether an object is an instance of a class

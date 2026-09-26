@@ -12,8 +12,15 @@ public class ShapeTest {
 
 		Rectangle r1 = new Rectangle(2.0, 6.0);
 
+		// instanceof operator stuff
+		Object myObj = new Triangle(4, 4, 6);
+
+		if (myObj instanceof Triangle) {
+			System.out.printf("The triangle area is %.2f%n%n", ((Triangle) myObj).getArea());
+		}
+
 		// polymorphism stuff / ArrayList stuff
-		
+
 		ArrayList<Shape> shapes = new ArrayList<Shape>();
 		shapes.add(s1);
 		shapes.add(t1);
@@ -21,22 +28,25 @@ public class ShapeTest {
 
 		double totalArea = 0.0;
 
-
 		for (int i = 0; i < shapes.size(); i++) {
+			printObject(shapes.get(i));
 			totalArea += shapes.get(i).getArea();
-			System.out.println(shapes.get(i).toString());
 		}
 
 		System.out.printf("Area: %.2f%n", totalArea);
 		ArrayList<Double> shapeVol = new ArrayList<Double>();
-		
+
 		for (Shape s : shapes) {
 			shapeVol.add(s.getArea());
 		}
-		
+
 		System.out.printf("Max Area: %.2f%n", Collections.max(shapeVol));
 		System.out.printf("Min Area: %.2f", Collections.min(shapeVol));
 
+	}
+
+	public static void printObject(Object x) {
+		System.out.println(x);
 	}
 
 }
