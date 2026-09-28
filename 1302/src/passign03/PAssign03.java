@@ -42,7 +42,7 @@ public class PAssign03 {
 	// printArray()
 	public static void printArray(Computer[] computers) {
 		for (Computer computer : computers) {
-			System.out.println(computer.toString());
+			System.out.println(computer); //changed to implicitly call toString()
 		}
 	}
 }
