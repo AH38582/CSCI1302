@@ -1,0 +1,80 @@
+Exceptions
+- a runtime error not caught by compiler (e.g ArrayIndexOutOfBoundsException)
+- terminates program execution if exception is not handled
+- exceptions can be countered with java mechanics and allows the program to execute completely
+
+Exception handling
+- three operations:
+	- declaring an exception; 
+	- throwing an exception
+	- catching an exception
+- before exceptions, error checking was handled with if statements
+- using exceptions will enable a method to throw an exception to its caller and let them handle it however they would like
+- Without it, a method must handle the exception or terminate a program
+- Program termination is very unacceptable
+
+try-catch block
+- surrounds code that throws an exception
+- try keyword watches for exception
+- catch keyword handles the exception
+- throwing an exception - happens when throw is explicitly called, or exception happens in try/catch block
+- the benefits are:
+	-the caller handles the exception and not the author
+	- Client decided how to handle an exception
+	- Separates detecting error from handling error
+	- flexibility
+
+Exception types
+- root class is java.lang.Throwable
+- exceptions can be created by extending the Exception class or subclasses of Exception
+- system errors, exception, runtime exceptions are the three major exception types(ofc there's more than one yipeeeeeeeeeeeeeeeeee)
+
+System errors
+- thrown by JVM and represented in the Error class
+- numerous examples include LinkageError, VirtualMachineError and more
+
+Exception errors
+- errors caused by your program and external circumstances
+- numerous examples include ClassNotFoundException, IOException, RuntimeException and more
+
+Runtime exceptions
+- **note the RuntimeException class extends Exception**
+- caused by programming errors
+- numerous examples include ArithmeticException, NullPointerException, IndexOutOfBoundsException, IllegalArgumentException and more
+
+Checked v. unchecked exceptions
+- RuntimeException, Error and their subclasses are considered unchecked exceptions
+- All else is checked
+- checked exceptions should be surrounded by try-catch blocks or declared in method header so caller must deal with it
+- unchecked exceptions reflect programming logic errors that are unrecoverable
+
+Throwing exceptions
+- creating an instance of appropriate exception type and throw
+- throws declares exceptions
+- throw throws
+
+Catching exceptions
+- use try-catch block to surround code that can throw exceptions
+- inside the try block:
+	- if there is **no** exception error, the catch block is skipped
+	- if there is an exception error, the rest try block is skipped and the execution is passed to the catch block
+- Exception Handler - code that handles exception, found by propagating the exception through all calling methods until it is caught
+- can catch subclasses of exceptions and handle differently
+- superclasses will catch a subclass first
+- methods that declare that they throw exceptions should be called in try-catch blocks
+
+Declaring exceptions
+- every method must state types of checked exceptions it might explicitly throw its header
+
+Catch or declare checked expressions
+- if a method declares a checked exception, you must either:
+	- invoke a try-catch block 
+	- OR declare the exception in method header to indicate possible exception in calling method
+	
+java.lang.Throwable methods
+- getMessage("can be set on creation here in constructor like this") - returns message for the Exception.
+- toString() - textual representation of Exception object, does not include trace: Classname: message
+- printStackTrace() - prints stack trace
+- getStackTrace() - returns a StackTraceElement
+
+
