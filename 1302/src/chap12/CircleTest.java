@@ -1,12 +1,10 @@
 package chap12;
 
-import java.lang.classfile.TypeAnnotation.ThrowsTarget;
-
-// changing setRadius()
-
+// using exception handling in setRadius of Circle class
 public class CircleTest {
 
 	public static void main(String[] args) {
+		// try-catch
 		try {
 			Circle c1 = new Circle();
 			Circle c2 = new Circle(-27.0, null);
@@ -49,12 +47,12 @@ class Circle {
 		return radius;
 	}
 
-	public void setRadius(double radius) throws IllegalArgumentException {
-
+	// IllegalArgumentExecption
+	public void setRadius(double radius) {
 		if (radius >= 0) {
 			this.radius = radius;
 		} else {
-			throw new java.lang.IllegalArgumentException("Radius cannot be negative!");
+			throw new IllegalArgumentException("Radius cannot be nagative");
 		}
 	}
 

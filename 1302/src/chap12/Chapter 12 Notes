@@ -1,13 +1,13 @@
 Exceptions
-- a runtime error not caught by compiler (e.g ArrayIndexOutOfBoundsException)
-- terminates program execution if exception is not handled
+- a runtime error not caught by compiler (e.g ArrayIndexOutOfBoundsException); an object in Java
+- terminates program execution if exception is not handled(terminating program: bad, letting program execution to continue: good)
 - exceptions can be countered with java mechanics and allows the program to execute completely
 
 Exception handling
 - three operations:
-	- declaring an exception; 
-	- throwing an exception
-	- catching an exception
+	- declaring an exception / public void readFile() throws IOException { . . . }
+	- throwing an exception / throws new IllegalArgumentException("Number must be above zero.");
+	- catching an exception / try-catch example
 - before exceptions, error checking was handled with if statements
 - using exceptions will enable a method to throw an exception to its caller and let them handle it however they would like
 - Without it, a method must handle the exception or terminate a program
@@ -77,4 +77,21 @@ java.lang.Throwable methods
 - printStackTrace() - prints stack trace
 - getStackTrace() - returns a StackTraceElement
 
+finally keyword
+- executed regardless of exception; added after catch 
+- if there are no exceptions, the finally body is executed
+
+Custom Exceptions
+- Creating custom exceptions are possible, but using exception classes in API are recommended, unless predefined classes are not sufficient
+
+File class
+- Quick way to store ata is using text file input/output
+- provides an abstraction that deals with most of the machine-dependent complexities of files and path names
+- File is a wrapper class for the file name and its directroy path only
+
+Assertions
+- debug feature, must be enabled in program
+
+Reading data from the web
+-
 

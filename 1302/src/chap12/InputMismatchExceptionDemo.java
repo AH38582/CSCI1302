@@ -7,21 +7,20 @@ public class InputMismatchExceptionDemo {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		boolean validInput = true;
-		System.out.print("Enter an integer: ");
+		boolean valid = true;
 
 		do {
 			try {
-				int num = sc.nextInt();
-				System.out.printf("%nYour integer is: %d", num);
-				validInput = false;
-			} catch (InputMismatchException e) {
-				System.out.printf("%nInput must be an integer. Try again.%n");
 				System.out.print("Enter an integer: ");
+				int input = sc.nextInt();
+
+				System.out.printf("Entered: %d", input);
+				valid = false;
+			} catch (InputMismatchException e) {
+				System.out.println("Not an integer, try again!");
 				sc.nextLine();
 			}
-
-		} while (validInput);
+		} while (valid);
 	}
 
 }
